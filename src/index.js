@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { DataProvider } from './contexto/context';
+import { mainReducer } from './contexto/reducers';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <>
+    <DataProvider reducer={mainReducer}>
+      <App />
+    </DataProvider>
+  </>,
   document.getElementById('root')
 );
 
